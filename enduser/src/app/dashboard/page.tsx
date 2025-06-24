@@ -9,8 +9,7 @@ export default function Dashboard() {
   if (isLoading) return <p>Loading...</p>;
 
   if (!data?.user) {
-    // redirect kalau belum login
-    window.location.href = "/login";
+    router.push("/auth/signin");
     return null;
   }
   const logout = async () =>{
