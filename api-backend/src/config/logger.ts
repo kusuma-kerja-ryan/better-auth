@@ -1,5 +1,6 @@
 import pino from 'pino';
 import fs from 'fs';
+import pretty from 'pino-pretty';
 
 interface Log {
   time: number;
@@ -11,7 +12,6 @@ interface Log {
   };
 }
 
-
 if (!fs.existsSync('logs')) {
   fs.mkdirSync('logs');
 }
@@ -22,19 +22,26 @@ const customFormat = (log : Log) => {
   return `[${date}] ${levelStr}: ${log.msg}${log.req ? ` (${log.req.method} ${log.req.url})` : ''}\n`;
 };
 
+const prettyStream = pretty({
+  colorize: true,
+  translateTime: 'SYS:standard',
+  ignore: 'pid,hostname',
+});
 
 const destination = fs.createWriteStream('./logs/access.log', { flags: 'a' });
 const errorDestination = fs.createWriteStream('./logs/error.log', { flags: 'a' });
 
 const streams = [
   {
+    stream: prettyStream,
+  },
+  {
     stream: {
       write: (data : string) => {
         const parsed = JSON.parse(data);
         const formatted = customFormat(parsed);
-        process.stdout.write(formatted);
         destination.write(formatted);
-      }
+      },
     }
   },
   {

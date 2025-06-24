@@ -2,8 +2,10 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 import * as schema from "./schema";
-import logger from "../utils/logger";
-dotenv.config();
+import logger from "../config/logger";
+dotenv.config({
+  path: process.env.NODE_ENV === "development" ? ".env.development" : ".env.production",
+});
 
 const poolConnection = mysql.createPool({
   host: process.env.DB_HOST,
@@ -21,9 +23,9 @@ const checkConnection = async () => {
     const connection = await poolConnection.getConnection();
     await connection.ping();
     connection.release();
-    logger.info("✅ Database connection successful");
+    logger.info(`✅ Database connection successful`);
   } catch (error: any) {
-    logger.error(`❌ Database connection failed: ${error.message}`, { error });
+    logger.error(`🚨 Database connection failed: ${error.message}`);
   }
 };
 checkConnection();

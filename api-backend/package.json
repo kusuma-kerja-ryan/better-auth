@@ -6,16 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index.js",
-    "build": "set \"NODE_ENV=production\" npx tsc",
-    "dev": "set \"NODE_ENV=development\" npx nodemon src/index.ts",
-    "generate": "set \"NODE_ENV=development\" npx drizzle-kit generate",
-    "migrate": "set \"NODE_ENV=development\" npx drizzle-kit migrate",
-    "studio": "set \"NODE_ENV=development\" npx drizzle-kit studio",
-    "push": "set \"NODE_ENV=development\" npx drizzle-kit push",
-    "p:generate": "set \"NODE_ENV=development\" npx drizzle-kit generate",
-    "p:migrate": "set \"NODE_ENV=development\" npx drizzle-kit migrate",
-    "p:studio": "set \"NODE_ENV=development\" npx drizzle-kit studio",
-    "p:push": "set \"NODE_ENV=development\" npx drizzle-kit push"
+    "build": "set \"NODE_ENV=production\" && rm -rf dist && npx tsc",
+    "dev": "set \"NODE_ENV=development\" && npx nodemon src/index.ts",
+    "generate": "set \"NODE_ENV=development\" && npx drizzle-kit generate",
+    "migrate": "set \"NODE_ENV=development\" && npx drizzle-kit migrate",
+    "studio": "set \"NODE_ENV=development\" && npx drizzle-kit studio",
+    "push": "set \"NODE_ENV=development\" && npx drizzle-kit push",
+    "p:generate": "set \"NODE_ENV=development\" && npx drizzle-kit generate",
+    "p:migrate": "set \"NODE_ENV=development\" && npx drizzle-kit migrate",
+    "p:studio": "set \"NODE_ENV=development\" && npx drizzle-kit studio",
+    "p:push": "set \"NODE_ENV=development\" && npx drizzle-kit push"
   },
   "keywords": [],
   "author": "Octobees",
@@ -33,6 +33,7 @@
     "pino": "^9.7.0",
     "pino-http": "^10.5.0",
     "pino-multi-stream": "^6.0.0",
+    "pino-pretty": "^13.0.0",
     "ts-node-dev": "^2.0.0",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
+    "@types/node": "^24.0.3",
     "drizzle-kit": "^0.31.1",
     "nodemon": "^3.1.10"
   }
