@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1750671079315,
+      "tag": "0000_previous_lila_cheney",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1750671385541,
+      "tag": "0001_flippant_quasar",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1750671567103,
+      "tag": "0002_slippery_calypso",
+      "breakpoints": true
+    }
+  ]
+}

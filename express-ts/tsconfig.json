@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020", // Versi JS modern untuk Node.js
+    "module": "CommonJS", // Umumnya digunakan di Node.js
+    "rootDir": "./src", // Folder source code
+    "outDir": "./dist", // Folder hasil kompilasi
+    "esModuleInterop": true, // Agar bisa import default dari modul CommonJS
+    "forceConsistentCasingInFileNames": true, // Hindari error karena beda huruf besar-kecil
+    "strict": true, // Aktifkan pengecekan ketat TypeScript
+    "skipLibCheck": true, // Percepat kompilasi, lewati cek terhadap library d.ts
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}
