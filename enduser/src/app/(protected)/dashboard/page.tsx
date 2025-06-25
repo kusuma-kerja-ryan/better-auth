@@ -6,7 +6,7 @@ export default function Dashboard() {
   const { data, isPending: isLoading } = useSession();
   const router = useRouter();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p>Redirecting....</p>;
 
   if (!data?.user) {
     router.push("/auth/signin");

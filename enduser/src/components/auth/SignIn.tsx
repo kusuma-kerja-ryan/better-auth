@@ -18,10 +18,10 @@ export default function SignIn() {
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <Card className="max-w-md">
+    <Card className="min-w-[400px]">
       <CardHeader>
-        <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
-        <CardDescription className="text-xs md:text-sm">
+        <CardTitle className="text-lg md:text-xl text-center">Sign In</CardTitle>
+        <CardDescription className="text-center">
           Enter your email below to login to your account
         </CardDescription>
       </CardHeader>
@@ -119,7 +119,7 @@ export default function SignIn() {
                 await signIn.social(
                   {
                     provider: "google",
-                    callbackURL: `${process.env.NEXT_PUBLIC_BASE_URL}/dashboard`
+                    callbackURL: `${process.env.NEXT_PUBLIC_BASE_URL}`
                   },
                   {
                     onRequest: (ctx) => {
@@ -150,7 +150,7 @@ export default function SignIn() {
                 await signIn.social(
                   {
                     provider: "github",
-                    callbackURL: `${process.env.NEXT_PUBLIC_BASE_URL}/dashboard`
+                    callbackURL: `${process.env.NEXT_PUBLIC_BASE_URL}`
                   },
                   {
                     onRequest: (ctx) => {

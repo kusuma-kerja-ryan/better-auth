@@ -1,8 +1,8 @@
-import SignIn from "@/components/partials/signIn";
+import SignIn from "@/components/auth/SignIn";
 
 export default function Home() {
   return (
-   <main className="w-full min-h-screen bg-blue-100 flex justify-center items-center">
+   <main className="w-full bg-primary min-h-screen flex justify-center items-center">
       <SignIn />
    </main>
   );

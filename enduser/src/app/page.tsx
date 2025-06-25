@@ -1,33 +1,21 @@
-"use client"
-import { useSession, signOut } from "@/lib/auth";
-import { useRouter } from "next/navigation";
+import { Contact2 } from "./_components/ContactUs";
+import { Cta4 } from "./_components/CTASection";
+import { Faq1 } from "./_components/FAQSection";
+import FeaturesSection from "./_components/FeaturesSection";
+import { Gallery6 } from "./_components/GalleriesSection";
+import HeroSection from "./_components/HeroSection";
+import { Pricing2 } from "./_components/PriceSection";
 
-export default function Dashboard() {
-  const { data, isPending: isLoading } = useSession();
-  const router = useRouter();
-
-  if (isLoading) return <p>Loading...</p>;
-
-  if (!data?.user) {
-    router.push("/auth/signin");
-    return null;
-  }
-  const logout = async () =>{
-    await signOut({
-  fetchOptions: {
-    onSuccess: () => {
-      router.push("/");
-    },
-  },
-});
-  }
-
+export default function Homepage() {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome, {data.user.name}</p>
-      <p>Email: {data.user.email}</p>
-      <button onClick={logout}>Logout</button>
-    </div>
+    <main>
+      <HeroSection />
+      <FeaturesSection/>
+      <Cta4/>
+      <Gallery6/>
+      <Contact2/>
+      <Pricing2/>
+      <Faq1/>
+    </main>
   );
 }
