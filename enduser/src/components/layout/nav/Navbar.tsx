@@ -20,6 +20,7 @@ import {
 import { payloadNavbar } from "@/constant/payload";
 import { renderMenuItem, renderMobileMenuItem } from "./_components/MenuItem";
 import { useSession, signOut } from "@/lib/auth";
+import Image from "next/image";
 const { auth, logo, menu } = payloadNavbar
 
 const Navbar = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
+              <Image src={logo.src} className="max-h-8" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
@@ -70,7 +71,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
+              <Image src={logo.src} className="max-h-8" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
@@ -85,7 +86,7 @@ const Navbar = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="max-h-8" alt={logo.alt} />
+                      <Image src={logo.src} className="max-h-8" alt={logo.alt} />
                     </a>
                   </SheetTitle>
                 </SheetHeader>

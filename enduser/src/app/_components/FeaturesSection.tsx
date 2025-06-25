@@ -1,10 +1,6 @@
 import {
   Code,
-  GitBranch,
-  List,
   Play,
-  Sparkles,
-  WandSparkles,
   Lock,
   Wand2
 } from "lucide-react";
@@ -15,6 +11,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 
 interface FeatureCardProps {
@@ -37,7 +34,7 @@ export const FeatureCard = ({ icon, title, description, image, locked }: Feature
         <p className="leading-snug text-muted-foreground/70 text-sm">{description}</p>
       </CardContent>
       <CardFooter className="justify-end pr-0 pb-0">
-        <img
+        <Image
           className="h-40 w-full rounded-tl-md object-cover object-center"
           src={image}
           alt={title}

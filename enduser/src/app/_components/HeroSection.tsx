@@ -5,6 +5,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { iconsHero } from "@/constant/icons";
+import Image from "next/image";
 const HeroSection = () => {
   useEffect(() => {
     const lenis = new Lenis({
@@ -18,7 +19,7 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden py-32 px-5 md:px-10">
       <div className="absolute inset-x-0 top-0 flex h-full w-full items-center justify-center opacity-100">
-        <img
+        <Image
           alt="background"
           src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/patterns/square-alt-grid.svg"
           className="[mask-image:radial-gradient(75%_75%_at_center,white,transparent)] opacity-90"
@@ -28,7 +29,7 @@ const HeroSection = () => {
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <div className="flex flex-col items-center gap-6 text-center">
             <div className="rounded-xl bg-background/30 p-4 shadow-sm backdrop-blur-sm">
-              <img
+              <Image
                 src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg"
                 alt="logo"
                 className="h-16"
@@ -40,7 +41,7 @@ const HeroSection = () => {
                 <span className="text-primary">ColorSync</span>
               </h1>
               <p className="mx-auto max-w-3xl text-muted-foreground/80 text-sm sm:text-base md:text-lg lg:text-xl lg:!leading-8">
-                Upload a photo and a reference image — we'll automatically adjust the colors of your photo to match the tone and style of your reference. Perfect for photographers, designers, and content creators.
+                Upload a photo and a reference image — we&apos;ll automatically adjust the colors of your photo to match the tone and style of your reference. Perfect for photographers, designers, and content creators.
               </p>
             </div>
             <div className="mt-4 md:mt-6 flex justify-center gap-3">
@@ -67,7 +68,7 @@ const HeroSection = () => {
                         "group flex aspect-square h-12 md:h-16 items-center justify-center p-0",
                       )}
                     >
-                      <img
+                      <Image
                         src={icon.src}
                         alt={icon.alt}
                         className="h-6 md:h-8 saturate-0 transition-all group-hover:saturate-100"

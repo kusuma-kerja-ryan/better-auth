@@ -12,7 +12,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
         if (error?.message === "unauthenticated") {
             router.replace("/auth/signin");
         }
-    }, [error]);
+    }, [error, router]);
 
     if (isLoading) return <div>Loading...</div>;
 
