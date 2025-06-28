@@ -95,24 +95,24 @@ export default function BlogPagination({
     };
 
     return (
-            <div className={`w-full flex items-center justify-center ${totalPage <= 1 && 'hidden'}`}>
-                <Pagination className="w-full justify-center">
-                    <PaginationContent>
-                        <PaginationItem>
-                            <PaginationPrevious
-                                onClick={currentPage > 1 ? handlePrevious : undefined}
-                                aria-disabled={currentPage <= 1}
-                            />
-                        </PaginationItem>
-                        {renderPages()}
-                        <PaginationItem>
-                            <PaginationNext
-                                onClick={currentPage < totalPage ? handleNext : undefined}
-                                aria-disabled={currentPage >= totalPage}
-                            />
-                        </PaginationItem>
-                    </PaginationContent>
-                </Pagination>
-            </div>
+        <div className={`w-full flex items-center justify-center ${totalPage <= 1 && 'hidden'}`}>
+            <Pagination className="w-full justify-center">
+                <PaginationContent>
+                    <PaginationItem>
+                        <PaginationPrevious
+                            onClick={currentPage > 1 ? handlePrevious : undefined}
+                            aria-disabled={currentPage <= 1}
+                        />
+                    </PaginationItem>
+                    {renderPages()}
+                    <PaginationItem>
+                        <PaginationNext
+                            onClick={currentPage < totalPage ? handleNext : undefined}
+                            aria-disabled={currentPage >= totalPage}
+                        />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
+        </div>
     );
 }

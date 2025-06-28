@@ -7,18 +7,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Blog } from "@/constant/example-type";
 
-
-const heading = "Latest Blog Posts";
-const description = "Dive into photography tips, creative inspiration, and gear insights. Stay in focus with the latest from the world of visual storytelling.";
-
 export default function BlogBody({ blogs }: { blogs: Blog[] }) {
 
     return (
         <section className="">
             <div className="container flex flex-col items-center gap-y-10 px-5 md:px-10 max-w-7xl mx-auto">
                 <div className="self-start space-y-2">
-                    <TextMask phrases={[heading]} tag="h2" className="mx-auto text-3xl font-semibold text-pretty md:text-4xl lg:max-w-3xl" />
-                    <TextMask phrases={[description]} tag="p" className="mx-auto max-w-2xl text-muted-foreground/70 md:text-lg" />
+                    <TextMask phrases={["Latest Blog Posts"]} tag="h2" className="mx-auto text-3xl font-semibold text-pretty md:text-4xl lg:max-w-3xl" />
+                    <TextMask phrases={["Dive into photography tips, creative inspiration, and gear insights. Stay in focus with the latest from the world of visual storytelling."]} tag="p" className="mx-auto max-w-2xl text-muted-foreground/70 md:text-base" />
                 </div>
 
                 <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
@@ -34,15 +30,16 @@ export default function BlogBody({ blogs }: { blogs: Blog[] }) {
                                             {post.tags?.map((tag) => <span className="bg-gray-100 rounded-md px-3 py-2" key={tag}>{tag}</span>)}
                                         </div>
                                     </div>
-                                    <h3 className="text-xl font-semibold md:text-2xl lg:text-2xl">
-                                        <a
+
+                                    <TextMask phrases={[
+                                        <Link
+                                        key={`${post.slug}-title`}
                                             href={`/blog/${post.slug}`}
-                                            className="hover:underline"
-                                        >
+                                            className="hover:underline">
                                             {post.title}
-                                        </a>
-                                    </h3>
-                                    <BlogContent content={post.content} className="text-muted-foreground/70 line-clamp-2" />
+                                        </Link>
+                                    ]} className="text-xl font-semibold md:text-2xl lg:text-2xl" tag="h3" />
+                                    <TextMask phrases={[<BlogContent key={`${post.slug}-content`} content={post.content} className="text-muted-foreground/70 line-clamp-2" />]} className="text-muted-foreground/70 line-clamp-2" tag="div" />
                                     <div className="flex items-center space-x-4 text-sm pb-5">
                                         <span className="text-muted-foreground">{post.user.name}</span>
                                         <span className="text-muted-foreground">•</span>

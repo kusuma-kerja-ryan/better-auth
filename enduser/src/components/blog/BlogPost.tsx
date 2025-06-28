@@ -54,12 +54,12 @@ export default function BlogPost({ blog }: { blog: Blog }) {
 
                     <article className="max-w-2xl space-y-12">
                         <Image
-                            width={500}
-                            height={500}
+                            width={1920}
+                            height={1080}
                             quality={100}
                             src={blog.image}
                             alt="placeholder"
-                            className="mb-8 mt-0 aspect-video w-full rounded-lg object-cover"
+                            className="mb-8 mt-0 aspect-[16/12] w-full rounded-lg object-cover"
                         />
                         <BlogContent content={blog.content} className="body-parser space-y-6" />
                     </article>

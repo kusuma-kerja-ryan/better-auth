@@ -51,22 +51,23 @@ export default function BlogHeader() {
                     {posts.map((post) => (
                         <Card
                             key={post.id}
-                            className="grid grid-rows-[auto_auto_1fr_auto] pt-0"
+                            className="grid grid-rows-[auto_auto_1fr_auto] pt-0 overflow-hidden"
                         >
-                            <div className="aspect-16/9 w-full">
+                            <div className="aspect-[16/12] w-full">
                                 <Link
                                     href={`/blog/${post.slug}`}
                                     className="transition-opacity duration-200 fade-in hover:opacity-70"
                                 >
                                     <Image
-                                        height={500}
-                                        width={500}
+                                        height={720}
+                                        width={1280}
                                         src={post.image}
                                         alt={post.title}
-                                        className="h-full w-full object-cover object-center"
+                                        className="h-full object-cover object-center"
                                     />
                                 </Link>
                             </div>
+
                             <CardHeader>
                                 <h3 className="text-lg font-semibold hover:underline md:text-xl">
                                     <Link href={`/blog/${post.slug}`}>
