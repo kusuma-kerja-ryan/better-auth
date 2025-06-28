@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} className="max-h-8" alt={logo.alt} />
+              <Image src={logo.src} className="max-h-8" alt={logo.alt} width={50} height={500} />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
@@ -51,15 +51,15 @@ const Navbar = () => {
               ?
               <div className="flex gap-2 items-center">
                 <p className="font-semibold text-sm">{data.user.name}</p>
-                <Button variant="outline" size="md" className="py-2" onClick={async () => await signOut()} >
+                <Button effect={"scale"} variant="outline" size="md" className="py-2" onClick={async () => await signOut()} >
                   Logout
                 </Button>
               </div>
               : <div className="flex gap-2">
-                <Button asChild variant="outline" size="md">
+                <Button effect={"scale"} asChild variant="outline" size="sm">
                   <a href={auth.login.url}>{auth.login.title}</a>
                 </Button>
-                <Button asChild size="md">
+                <Button effect={"scale"} asChild size="sm">
                   <a href={auth.signup.url}>{auth.signup.title}</a>
                 </Button>
               </div>
@@ -70,12 +70,12 @@ const Navbar = () => {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-lg font-semibold tracking-tighter">
-                {logo.title}
-              </span>
+            <a href={logo.url} className="flex items-center gap-2 w-fit">
+              <Image src={logo.src} className="max-h-8 w-fit" alt={logo.alt} width={10} height={500} />
             </a>
+            <p className="text-lg font-semibold tracking-tighter w-full text-center mx-auto">
+              {logo.title}
+            </p>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -86,7 +86,7 @@ const Navbar = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <Image src={logo.src} className="max-h-8" alt={logo.alt} />
+                      <Image src={logo.src} className="max-h-8" alt={logo.alt} width={500} height={500} />
                     </a>
                   </SheetTitle>
                 </SheetHeader>

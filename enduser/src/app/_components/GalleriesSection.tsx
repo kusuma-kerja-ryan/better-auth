@@ -90,7 +90,7 @@ const Gallery6 = ({
     };
   }, [carouselApi]);
   return (
-    <section className="py-20 max-w-5xl mx-auto">
+    <section className="py-32 max-w-5xl mx-auto">
       <div className="container">
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
           <div>
@@ -157,6 +157,8 @@ const Gallery6 = ({
                           <Image
                             src={item.image}
                             alt={item.title}
+                            width={500}
+                            height={500}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>

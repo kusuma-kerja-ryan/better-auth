@@ -5,7 +5,7 @@ const payloadNavbar = {
         url: "/",
         src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
         alt: "logo",
-        title: "Kusuma Nagara",
+        title: "Ryan Sukamoto",
       },
       menu : [
         {
@@ -51,14 +51,14 @@ const payloadNavbar = {
             },
           ],
         },
-        {
-          title: "Pricing",
-          url: "/#pricing",
-        },
-        {
-          title: "Blog",
-          url: "/blog",
-        },
+        // {
+        //   title: "Pricing",
+        //   url: "/#pricing",
+        // },
+        // {
+        //   title: "Blog",
+        //   url: "/blog",
+        // },
       ],
       auth : {
         login: { title: "Login", url: "/auth/signin" },

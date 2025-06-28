@@ -37,6 +37,8 @@ export const FeatureCard = ({ icon, title, description, image, locked }: Feature
         <Image
           className="h-40 w-full rounded-tl-md object-cover object-center"
           src={image}
+          width={500}
+          height={500}
           alt={title}
         />
       </CardFooter>

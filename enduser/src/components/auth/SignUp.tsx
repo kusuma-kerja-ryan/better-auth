@@ -122,6 +122,8 @@ export default function SignUp() {
 										alt="Profile preview"
 										layout="fill"
 										objectFit="cover"
+										width={500}
+										height={500}
 									/>
 								</div>
 							)}

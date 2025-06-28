@@ -30,37 +30,25 @@ const defaultSections = [
   {
     title: "Product",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
       { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "About Me", href: "#" },
+      { name: "Support", href: "#" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "Contact Us", href: "#" },
+      { name: "Terms of Service", href: "#" },
     ],
   },
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-  { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  { icon: <FaInstagram className="size-5" />, href: "https://www.instagram.com/ryan.sukamoto/", label: "Instagram" },
+  { icon: <FaFacebook className="size-5" />, href: "https://www.facebook.com/ryansukamoto", label: "Facebook" },
+  { icon: <FaTwitter className="size-5" />, href: "https://twitter.com/ryansukamoto", label: "Twitter" },
+  { icon: <FaLinkedin className="size-5" />, href: "https://www.linkedin.com/in/kusumaryan", label: "LinkedIn" },
 ];
 
 const defaultLegalLinks = [
@@ -70,15 +58,15 @@ const defaultLegalLinks = [
 
 const Footer7 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
+    url: "https://kusumanayr.vercel.app",
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Ryan Sukamoto",
   },
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "A personal photography portfolio capturing real moments with emotion, light, and timeless style.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = `© ${new Date().getFullYear()} ryansukamoto.com. All rights reserved.`,
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
@@ -92,13 +80,15 @@ const Footer7 = ({
                 <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={40}
+                  height={50}
                   title={logo.title}
-                  className="h-8"
+                  className="h-6 md:h-8"
                 />
               </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+              <h2 className="text-base md:text-xl font-semibold">{logo.title}</h2>
             </div>
-            <p className="text-muted-foreground max-w-[70%] text-sm">
+            <p className="text-muted-foreground max-w-[70%] text-sm !leading-6">
               {description}
             </p>
             <ul className="text-muted-foreground flex items-center space-x-6">
@@ -111,7 +101,7 @@ const Footer7 = ({
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+          <div className="flex flex-col md:flex-row gap-6 lg:gap-20 w-full justify-end">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 <h3 className="mb-4 font-bold">{section.title}</h3>

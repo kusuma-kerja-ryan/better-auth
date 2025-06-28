@@ -3,6 +3,8 @@ import "./globals.css";
 import 'lenis/dist/lenis.css'
 import { Navbar } from "@/components/layout/nav";
 import { Footer7 } from "@/components/layout/footer";
+import AnimateWrapper from "@/components/layout/wrapper/AnimateWrapper";
+import StickyCursor from "@/components/animate/StickyCursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`min-h-screen w-full`}>
-        <Navbar />
-        <main className="pt-12 md:pt-16">
-          {children}
-          <Footer7 />
-        </main>
+        <AnimateWrapper>
+          <StickyCursor />
+          <Navbar />
+          <main className="pt-12 md:pt-14">
+            {children}
+            <Footer7 />
+          </main>
+        </AnimateWrapper>
       </body>
     </html>
   );

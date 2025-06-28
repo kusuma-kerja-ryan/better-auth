@@ -13,7 +13,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border-[2px] border-primary bg-background shadow-sm hover:bg-primary/10 hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -21,15 +21,20 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        md: "rounded-md px-4 py-3 md:py-2 text-sm",
+        sm: "rounded-md px-4 py-2 text-xs md:text-sm",
+        md: "rounded-md px-4 py-3 md:py-3 text-sm",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+      },
+      effect: {
+        default: "",
+        scale: "hover:md:scale-105 hover:md:shadow-md transform duration-500 transition-all ease-in-out",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      effect: "default",
     },
   }
 )
@@ -41,11 +46,11 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, effect, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, effect, className }))}
         ref={ref}
         {...props}
       />
