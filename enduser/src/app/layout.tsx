@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`min-h-screen w-full`}>
+        <StickyCursor />
+        <Navbar />
         <AnimateWrapper>
-          <StickyCursor />
-          <Navbar />
           <main className="pt-12 md:pt-14">
             {children}
             <Footer7 />

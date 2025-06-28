@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -138,4 +144,141 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.body-parser h1 {
+  @apply text-4xl font-bold text-black mb-4;
+}
+.body-parser h2 {
+  @apply text-xl md:text-3xl font-semibold text-gray-800 mb-3;
+}
+.body-parser h3 {
+  @apply text-lg md:text-2xl font-semibold text-gray-800 mb-3;
+}
+.body-parser p {
+  @apply text-sm font-heading sm:text-base lg:text-lg text-gray-600 mb-2 leading-6 sm:!leading-8;
+}
+.body-parser ul {
+  @apply list-disc pl-5 mb-4;
+}
+.body-parser li {
+  @apply text-base text-gray-700 mb-2;
+}
+.body-parser a {
+  @apply text-base text-blue-600 underline break-words;
+}
+.body-parser img {
+  @apply rounded-lg;
+}
+
+.grecaptcha-badge {
+  display: none !important;
+  /* left: 0 !important;
+    right: auto !important;
+    z-index: 19 !important; */
+}
+
+
+/* From Uiverse.io by alexruix */ 
+.loader {
+  --cell-size: 52px;
+  --cell-spacing: 3px;
+  --cells: 3;
+  --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
+}
+
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
+}
+
+.cell.d-1 {
+  animation-delay: 100ms;
+}
+
+.cell.d-2 {
+  animation-delay: 200ms;
+}
+
+.cell.d-3 {
+  animation-delay: 300ms;
+}
+
+.cell.d-4 {
+  animation-delay: 400ms;
+}
+.cell:nth-child(1) {
+  --cell-color: #ffffff; /* putih polos */
+}
+
+.cell:nth-child(2) {
+  --cell-color: #fff7f7; /* hampir putih dengan sentuhan merah */
+}
+
+.cell:nth-child(3) {
+  --cell-color: #fff0f0;
+}
+
+.cell:nth-child(4) {
+  --cell-color: #ffeaea;
+}
+
+.cell:nth-child(5) {
+  --cell-color: #ffe3e3;
+}
+
+.cell:nth-child(6) {
+  --cell-color: #ffdddd;
+}
+
+.cell:nth-child(7) {
+  --cell-color: #ffd6d6;
+}
+
+.cell:nth-child(8) {
+  --cell-color: #ffd0d0;
+}
+
+.cell:nth-child(9) {
+  --cell-color: #ffcbcb; /* tetap soft, tidak merah mencolok */
+}
+
+
+
+/*Animation*/
+@keyframes ripple {
+  0% {
+    background-color: transparent;
+  }
+
+  30% {
+    background-color: var(--cell-color);
+  }
+
+  60% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* tambahkan di globals.css */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

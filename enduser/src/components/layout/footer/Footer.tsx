@@ -30,7 +30,7 @@ const defaultSections = [
   {
     title: "Product",
     links: [
-      { name: "Blog", href: "#" },
+      { name: "Blog", href: "/blog" },
       { name: "About Me", href: "#" },
       { name: "Support", href: "#" },
     ],
