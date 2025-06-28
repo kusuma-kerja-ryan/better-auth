@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-40 px-5 md:px-10">
+    <section className="relative overflow-hidden py-28 md:py-40 px-5 md:px-10">
       <div className="absolute inset-x-0 top-0 flex h-full w-full items-center justify-center opacity-100">
         <Image
           alt="background"
@@ -60,7 +60,14 @@ const HeroSection = () => {
               <Button size={"md"} className="shadow-sm transition-all hover:scale-105 duration-300 hover:shadow px-8">
                 View Portfolio
               </Button>
-              <Button size={"md"} variant="outline" className="group transition-all hover:scale-105 duration-300 shadow-sm border-primary border-[2px]">
+              <Button
+                onClick={() => {
+                  const contactSection = document.getElementById("contact-us");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                size={"md"} variant="outline" className="group transition-all hover:scale-105 duration-300 shadow-sm border-primary border-[2px]">
                 Contact Me{" "}
                 <ExternalLink className="ml-1 h-4 transition-transform group-hover:translate-x-0.5" />
               </Button>

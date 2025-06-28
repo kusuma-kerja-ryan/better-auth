@@ -30,7 +30,7 @@ export default function StickyCursor() {
   }, [manageMouseMove])
 
   return (
-    <div className={`relative`}>
+    <div className={`hidden md:block relative`}>
       <motion.div 
         style={{
           left: smoothMouse.x, 

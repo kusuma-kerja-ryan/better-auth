@@ -37,12 +37,12 @@ const Contact2 = () => {
   ]
 
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-16 md:py-32 px-5 md:px-10 scroll-mt-20" id="contact-us">
       <div className="container mx-auto">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 lg:flex-row lg:gap-20">
           <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
             <div className="text-center lg:text-left space-y-6">
-              <TextMask phrases={[title]} className="text-3xl font-semibold lg:text-5xl" tag="h2" />
+              <TextMask phrases={[title]} className="text-3xl font-semibold lg:text-5xl uppercase" tag="h2" />
               <TextMask phrases={[description]} className="text-muted-foreground/70 text-sm md:text-lg" tag="p" />
             </div>
             <div className="mx-auto w-fit lg:mx-0 space-y-5 pb-10">
